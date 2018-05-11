@@ -1,0 +1,25 @@
+digraph finite_state_machine {
+	//Draw the graph from left to right.
+	rankdir=LR;
+	
+	//Define a node that is an accepting (double circle) shape.
+	node [shape=doublecircle]; "{1}"; "{1,2}";
+	
+	//An invisible node is used to draw an incoming edge that
+	//comes from no particular node.
+	node [style=invis]; start;
+
+	//Reset node style for future nodes
+	node [style=solid];
+	node [shape=circle];
+
+	//You don't need to declare additional nodes,
+	//just use them.
+	start ->  "{1}";
+	 "{1}" -> "{1,2}" [ label = "a" ];
+	"{1,2}" -> "{1,2}" [ label = "a,b" ];
+	"{1}" -> "{2}" [ label = "b" ];
+	"{2}" -> "{1}" [ label = "b" ];
+	"{2}" -> "{}" [ label = "a" ];
+	"{}" -> "{}" [ label = "a,b" ];
+}

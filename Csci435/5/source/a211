@@ -1,0 +1,22 @@
+digraph finite_state_machine {
+	//Draw the graph from left to right.
+	rankdir=LR;
+	
+	//Define a node that is an accepting (double circle) shape.
+	node [shape=doublecircle]; q_accept;
+	
+	//An invisible node is used to draw an incoming edge that
+	//comes from no particular node.
+	node [style=invis]; start;
+
+	//Reset node style for future nodes
+	node [style=solid];
+	node [shape=circle];
+
+	//You don't need to declare additional nodes,
+	//just use them.
+	start -> q_start;
+	q_start -> q_loop [ label = "&epsilon; , &epsilon; &rarr; E$" ];
+	q_loop -> q_loop [ label = "&epsilon;,E &rarr; E+T \n &epsilon;, E &rarr; T \n &epsilon; , T &rarr; T &times; F  \n &epsilon; , T &rarr; F\n &epsilon; ,  F &rarr; (E) \n  &epsilon; ,  F &rarr; a \n +,+ &rarr; &epsilon; \n &times;, &times; &rarr; &epsilon; \n (,( &rarr; &epsilon; \n ),) &rarr; &epsilon; \n a,a &rarr; &epsilon; " ];
+	q_loop -> q_accept [ label = "&epsilon;,$ &rarr; &epsilon;" ];
+}

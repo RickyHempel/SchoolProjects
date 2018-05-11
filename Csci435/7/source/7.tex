@@ -1,0 +1,67 @@
+\documentclass[10pt] {article}
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{Homework 7 }
+\author{Ricky Hempel}
+\begin{document}
+\maketitle
+\begin{center}
+Chapter 4: Exercises: 4.1-6, 4.9
+\end{center}
+\begin{enumerate}
+\item[4.1]
+(a.)Yes the DFA M accepts 0100.\\
+(b.)No M does not accept 011.\\
+(c.)No this input has only a single component and therefore is not in the correct form.\\
+(d.)No the first component is not a regular expression and so the input is not of the correct form.\\
+(e.)No M's language is not empty\\
+(f.)Yes M accepts the same language as itself.
+\item[4.2]\begin{proof}
+The language can be express as the set L=$\{ \langle R,S \rangle\ \mid$ R is a DFA and is S is a regex where $L(R)=L(S)\}$.Let the Turning Machine T be the TM that decides L. \\
+T="On input $L=\langle R,S \rangle$:\\
+1.Convert S to a NFA N.\\
+2.Convert N to a DFA D.\\
+3. By using Theorem 4.5. Feed R and D into a TM M that decides whether or they are equal or not.\\
+(a.) If M says R and D are equal by accepting then accept.\\
+(b.) If M says R and D are not equal by rejecting then reject.  "
+\end{proof}
+\item[4.3]\begin{proof}
+Let the Turning Machine T be the TM that decides $ALL_{DFA}$.\\
+T="On input $\langle A \rangle$, where A is a DFA.\\
+1.Convert A to $A^c$, the DFA that accepts the complement of the language being accepted by A.\\
+2.Using Theorem 4.4 as a subroutine, check and see if $L(A^c)= \emptyset$ or not.\\
+3.If $L(A^c)=\emptyset$ accept otherwise reject."
+\end{proof}
+\item[4.4]\begin{proof}
+Let the Turning Machine T be the TM that decides $A_{\varepsilon CFG}$.\\
+T="On input $\langle G \rangle$ where G is a context free grammar.\\
+1.Convert the grammar G to a CFG G' in CNF. \\
+2.If $G'$ contains the production $S \rightarrow \varepsilon$ accept, otherwise reject.
+"
+\end{proof}
+\item[4.5]
+\begin{proof}
+Let $s_1,s_2,...$ be a list of all strings in $\Sigma^*$. The following TM T recognizes $\overline{E_{TM}}$.\\
+T="On input $\langle M \rangle$, where M is a TM:\\
+1.Repeat the following for i=1,2,3...\\
+2.Run M for i steps on each input,$s_1,s_2,...,s_i$.\\
+3.If M has accepted any of these, accept.Otherwise reject."
+\end{proof}
+\item[4.6](a.)No f is not one-to-one because of f(1)=f(3). \\
+(b.)No f is not onto because their is not a x$\in$X such that f(x)=10.\\
+(c.)No f is not a correspondence because f is not one-to-one and onto.\\
+(d.)Yes g is one-to-one.\\
+(e.)Yes g is onto.\\
+(f.)Yes g is a correspondence because g is one-to-one and onto.
+\item[4.9]\begin{proof}
+A relation is known as a equivalence relation if it is reflexive, transitive, and symmetric. A same size relation is a equivalence relation if and only if it is reflexive, transitive, and symmetric.First, it is reflexive because the identity function $f(x)=x,\forall x \in A$ is a correspondence $f: A \rightarrow A$. Second it is symmetric because any correspondence has an inverse, which itself is a correspondence. Lastly, it is transitive because the function $f:A \rightarrow B$ is a bijective function from A to B and the function $g: B \rightarrow C$ is a bijective function from B to C. Therefore the composition of two bijective functions f and g is also a bijective function from A to C.  Hence the same size relation is reflexive,symmetric, and transitive so the same size relation is a equivalence relation.
+\end{proof}
+\end{enumerate} 
+\end{document}

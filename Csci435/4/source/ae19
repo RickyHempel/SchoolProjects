@@ -1,0 +1,15 @@
+digraph q19 {
+rankdir=LR;
+
+node [shape=doublecircle]; q5;
+node [style=invis]; start;
+node [style=solid];
+node [shape=circle];
+
+start -> q0;
+q0-> q1 [label="0"];
+q1 -> q2 [label="&epsilon;"];
+q2 -> q3 [label="0"];
+q3 -> q4 [label="&epsilon;"];
+q4 -> q5 [label="0"];
+}

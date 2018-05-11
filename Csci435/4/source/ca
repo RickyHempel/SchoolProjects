@@ -1,0 +1,11 @@
+digraph q19 {
+rankdir=LR;
+
+node [shape=doublecircle];
+node [style=invis]; start;
+node [style=solid];
+node [shape=circle];
+
+start -> q0[label="&epsilon;"];
+
+}

@@ -1,0 +1,41 @@
+digraph finite_state_machine { 
+//Draw the graph from left to right.
+rankdir=LR;
+//Define a node that is an accepting (double circle) shape.
+node [shape=doublecircle]; "r3q4";
+//An invisible node is used to draw an incoming edge that
+//comes from no particular node.
+node [style=invis]; start;
+
+//Reset node style for future nodes
+node [style=solid];
+node [shape=circle];
+
+//You don't need to declare additional nodes,
+//just use them.
+start -> r1q1;
+r1q1-> r1q2  [ label="a"];
+r1q1-> r2q1  [label="b"];
+r1q2->r1q3   [label="a"];
+r1q2->r2q2   [label="b"];
+r2q1->r2q2   [label="a"];
+r2q1->r3q1   [label="b"];
+r3q1->r3q1   [label="b"];
+r1q3->r1q4   [label="a"]; 
+r1q3->r2q3   [label="b"];
+r2q2->r2q3   [label="a"];
+r2q2->r3q2   [label="b"];
+r3q1->r3q2   [label="a"];
+r1q4->r1q4   [label="a"];
+r1q4->r2q4   [label="b"];
+r2q3->r2q4   [label="a"];
+r2q3->r3q3   [label="b"];
+r3q2->r3q2   [label="b"];
+r3q2->r3q3   [label="a"];
+r3q3->r3q3   [label="b"];
+r2q4->r2q4   [label="a"];
+r2q4->r3q4   [label="b"];
+r3q3->r3q4  [label="a"];
+r3q4->r3q4   [label="a,b"];
+
+}
