@@ -1,0 +1,26 @@
+The books of the library are as followed:
+
+The title of the book is A.
+The author of the book is J. R. R. Tolkien.
+The copyright year of the book is 1920.
+The book's edition is 5 edition.
+The number of pages the book has is 100 pages.
+
+The title of the book is D.
+The author of the book is Eoin Colfer.
+The copyright year of the book is 2003.
+The book's edition is 4 edition.
+The number of pages the book has is 305 pages.
+
+The title of the book is G.
+The author of the book is J. R. R. Tolkien.
+The copyright year of the book is 1934.
+The book's edition is 4 edition.
+The number of pages the book has is 203 pages.
+
+The title of the book is R.
+The author of the book is JK.
+The copyright year of the book is 2021.
+The book's edition is 5 edition.
+The number of pages the book has is 567 pages.
+

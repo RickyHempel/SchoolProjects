@@ -1,0 +1,45 @@
+/*
+Name-Ricky Hempel
+Date-10/04/14
+File-image_editor.h
+Purpose-To store header information for the image
+editor class.
+
+ */
+
+
+#ifndef image_editor_h//Micoguard.
+#define image_editor_h//Micoguard.
+#include <iostream>//STDOUT/STDIN.
+#include <string>//To use stings.
+#include <vector>//To use vectors.
+
+using namespace std;//namsespace standard 
+
+class image_editor{//declares the class.
+  //private: by default 
+  string magic_number;//The 3 number stored in a string.
+  int width,height,max_color;//The width height and max color stored in ints
+  vector<int> red,blue,green;//The red blue and values for each pixel stored in vectors.
+  
+ public:
+  void read_image(string file_name);
+  /*
+    Returns:Nothing 
+    
+    Takes in an a string of the file name to input values
+     
+    Function:Reads in numbers from a file and stores them in above elements.  
+
+
+
+   */
+  void write_image(string file_name);
+  void grey_scale();
+  void flip_image();
+  void red_only();
+  void green_only();
+  void blue_only();
+
+};
+#endif

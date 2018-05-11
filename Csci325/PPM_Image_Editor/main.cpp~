@@ -1,0 +1,125 @@
+/*
+Name-Ricky Hempel
+Date-10/04/14
+File-main.cpp
+Purpose:To prompt the user the 
+choices to edit and .ppm image 
+*/
+
+#include <iostream>//STDIN/STDOUT.
+#include <string>//String use.
+#include "image_editor.h"//Header for the class.
+
+using namespace std;//Standard namespace.  
+
+//Main function.
+int main (){
+
+ image_editor option;//Declares a variable of the class. 
+ string input_file_name;//The name of the file the with .ppm image.
+ string output_file_name;//The name of the  file write the edited .ppm image to.
+ bool loop_control=false;//Controls the loop for the user.
+ char choice;//The option the user types in.
+
+ //Welcome message for the user.
+ cout<<"Welcome to the .PPM editor 100!\n"
+     <<"Please choose how you would like the edit your image!"<<endl;
+
+ do{//Loop menu for the user also prompts the users for options.
+ 
+    cout<<"\nHere are your editing possibilities: \n "
+        <<"A. To convert an image to a greyscale image.\n"
+        <<" B. To flip an image.\n"
+        <<" C. To convert an image to an redscale image.\n"
+        <<" D. To convert an image to an greenscale image.\n"
+        <<" E. To convert an image to an bluescale image.\n"
+        <<" Q. To exit.\n"
+        <<"Enter the letter of your selection: ";
+
+    cin>>choice;//User enters choice.
+   
+    cin.get();//To move buffer for getline.
+              
+    choice=toupper(choice);//If user types in a loser case changes to the upper case.
+
+   //If the user doesn't quit or types invalid choice. 
+   if(choice=='A'||choice=='B'||choice=='D'||choice=='E'){ 
+
+     cout<<"Please enter a file to read from:\n";//Prompts user to enter an file.
+
+      getline(cin,input_file_name);//Use getline so user can enter file with spaces,also stores file name.
+
+      option.read_image(input_file_name);//Calls function read the image into variable. 
+
+      cout<<"Please enter a file to write to "<<endl;//Prompts user to enter an file to write to.
+
+      getline (cin,output_file_name);//Use to getline so user can enter file with spaces,also stores a file name.
+
+      if(choice=='A'){//if user enters A. 
+	option.grey_scale();//calls greyscale function which sets all vector values to
+	                //The average of the three elements in the vector.
+
+	option.write_image(output_file_name);//Calls the function to output the numbers in a file.
+
+	cout<<"It is done! We hope you enjoy! "<<endl;//Message to tell the user it is done.
+
+      }
+
+      else if(choice=='B'){//If user types in B.
+
+	option.flip_image();//Calls the flip image function which reverses the vectors.
+
+	option.write_image(output_file_name);//Calls the function to output the numbers to a file.
+
+	cout<<"It is done! We hope you enjoy! "<<endl;//Message to tell the user it is done.
+      }
+
+      else if(choice=='C'){//If user types in a C.
+	option.red_only();//Calls the red only function which zeros out the green and 
+	             //Blue vector to make an red scale image.
+	
+	option.write_image(output_file_name);//Calls the function to output the numbers to a file.
+
+	cout<<"It is done! We hope you enjoy! "<<endl;//Message to tell the user it is done.
+      }
+
+      else if (choice=='D'){//if user enters choice D.
+
+	option.green_only();//Calls the green only function which sets 
+	                //the values to the red and blue vectors to zeros.
+	
+	option.write_image(output_file_name);//Calls the function to output the numbers to a file.
+
+	cout<<"It is done! We hope you enjoy! "<<endl;//Message to tell the user it is done.
+      }
+
+      else if(choice=='E'){//If the user enters choice E.
+
+	option.blue_only();//Calls the blue only function which sets
+                       //the values of the green and red vectors to zero.
+
+	option.write_image(output_file_name);//Calls the function to output the numbers to a file.
+
+	cout<<"It is done! We hope you enjoy! "<<endl;//Message to tell the user it is done.
+      }
+    }
+    else if(choice=='Q'){//If the user enter a Q.
+
+      cout<<"\nGoodbye have an blessed day!"<<endl;//Message to tell the user the program is quitting.
+
+      loop_control=true;//Changes the value of the loop control variable to exit the loop.
+    }
+
+    else//If the user enters an invalid choice.
+
+      cout<<"\nYou entered an invalid selection.\n"
+	  <<"You must enter an A,B,C,D,E, or Q. Try again.\n";
+    
+  }
+
+  while(!loop_control);//Loop continues until loop control is true.
+ 
+  return 0;//returns 0
+
+}//Ends main function.
+

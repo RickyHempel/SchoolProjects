@@ -1,0 +1,21 @@
+#infndef image_editor_h
+#define  image_editor_h
+#include<vector>
+
+using namespace std;
+
+class image_editor{
+  string magic_number;
+  int width,height,max_color;
+  vector<int> red,blue,green;
+  
+ public:
+  void read_image(string file_name);
+  void write_image(string file_name);
+  void grey_scale();
+  void flip_image();
+  void green_only();
+  void red_only();
+  void blue_only();
+};
+#endif

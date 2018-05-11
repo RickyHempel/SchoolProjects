@@ -1,0 +1,13 @@
+In this project your team will be implementing a float_vector class in
+float_vector.cpp and float_vector.h.  Please try to follow the documentation
+standards implied by the other files (document each file, class, and method).
+
+You must compile and link each of the files separately.  Compile with:
+
+(Compile each individual file to object code)
+g++ -c main.cpp
+g++ -c gradebook.cpp
+g++ -c float_vector.cpp
+
+(Link object files to form executable gradebook)
+g++ float_vector.o gradebook.o main.o -o gradebook
