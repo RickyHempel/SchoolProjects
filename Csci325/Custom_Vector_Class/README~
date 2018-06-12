@@ -1,8 +1,0 @@
-You must compile and link each of the files separately.  Compile with:
-
-(Compile each individual file to object code)
-g++ -c main.cpp
-g++ -c gradebook.cpp
-
-(Link object files to form executable gradebook)
-g++ main.o gradebook.o -o gradebook
